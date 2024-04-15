@@ -14,6 +14,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -35,12 +36,13 @@ public class ExaminerServisTest {
 
     @Test
     void randomTest() {
-        for (Question question : javaQuestationServise.getAll()) {
-            if (question.equals(javaQuestationServise.random)) {
-                break;
-
-            }
-        }
+        javaQuestationServise.add("ffffff", "ddddddd");
+        javaQuestationServise.add("12345", "12345");
+        javaQuestationServise.add("654321", "654321");
+        Set<Question>actual=new HashSet<>();
+        actual.add(new Question("12345", "12345"));
+        actual.add(new Question("ffffff", "ddddddd"));
+        assertThat(javaQuestationServise.getAll(), containsExactlyInAnyOrder(actual));
 
 
     }

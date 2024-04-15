@@ -6,8 +6,8 @@ import java.util.*;
 
 @Service
 public class JavaQuestationServise implements QuestionServise{
-    Set<Question>questions=new HashSet<>();
-    Random random=new Random();
+    private final Set<Question>questions=new HashSet<>();
+    private final Random random=new Random();
     @Override
     public Question add(String answer, String question){
 return add(new Question(answer,question));

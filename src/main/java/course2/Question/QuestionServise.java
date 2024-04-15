@@ -3,19 +3,9 @@ package course2.Question;
 import java.util.Collection;
 
 public interface QuestionServise {
-   public default Question add(String answer, String question){
-        return null;
-    }
-    public default Question add(Question question){
-       return null;
-    }
-    public default Question remove(Question question){
-       return null;
-    }
-    public default Collection<Question> getAll(){
-       return null;
-    }
-    public default Question getRandomeQuestation(){
-      return null;
-    }
+   public  Question add(String answer, String question);
+    public  Question add(Question question);
+    public Question remove(Question question);
+    public Collection<Question> getAll();
+    public Question getRandomeQuestation();
 }

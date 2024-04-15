@@ -3,8 +3,8 @@ package course2.Question;
 import java.util.Objects;
 
 public class Question {
-    String qustion;
-    String answer;
+    private  String qustion;
+    private  String answer;
 
     public Question(String answer,String qustion) {
         this.answer = answer;

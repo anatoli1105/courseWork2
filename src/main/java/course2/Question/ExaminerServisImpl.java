@@ -7,10 +7,13 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
+/**
+ *
+ */
 @Service
 public class ExaminerServisImpl implements ExaminerServis {
 
-    private final QuestionServise questionServise;
+    private  QuestionServise questionServise;
 
     public ExaminerServisImpl(QuestionServise questionServise) {
 
@@ -18,7 +21,7 @@ public class ExaminerServisImpl implements ExaminerServis {
     }
 
     @Override
-    public Collection<Question> getQuestion(int amourt) {
+    public  Collection<Question> getQuestion(int amourt) {
         var question = questionServise.getAll().size();
         Set<Question> questions = new HashSet<>();
         if (amourt > question) {
