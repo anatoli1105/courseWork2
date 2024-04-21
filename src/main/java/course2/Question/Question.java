@@ -6,10 +6,12 @@ public class Question {
     private  String qustion;
     private  String answer;
 
-    public Question(String answer,String qustion) {
+    public Question(String qustion,String answer) {
         this.answer = answer;
         this.qustion=qustion;
     }
+
+
 
     public String getAnswer() {
         return answer;

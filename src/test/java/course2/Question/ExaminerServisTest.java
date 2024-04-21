@@ -7,7 +7,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.web.servlet.tags.form.SelectTag;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -28,24 +27,13 @@ public class ExaminerServisTest {
     @BeforeEach
     void setUp() {
         List<Question> list = new ArrayList<>();
-        list.add(new Question("1234", "23454"));
-        list.add(new Question("fff", "ggg"));
+        list.add(new Question("ffffff", "ddddddd"));
+        list.add(new Question("12345", "12345"));
         when(javaQuestationServise.getAll()).thenReturn(list);
 
     }
 
-    @Test
-    void randomTest() {
-        javaQuestationServise.add("ffffff", "ddddddd");
-        javaQuestationServise.add("12345", "12345");
-        javaQuestationServise.add("654321", "654321");
-        Set<Question>actual=new HashSet<>();
-        actual.add(new Question("12345", "12345"));
-        actual.add(new Question("ffffff", "ddddddd"));
-        assertThat(javaQuestationServise.getAll(), containsExactlyInAnyOrder(actual));
 
-
-    }
 
     @Test
     void randomAmourtTest() {

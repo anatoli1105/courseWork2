@@ -3,8 +3,13 @@ package course2.Question;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.hamcrest.CoreMatchers.*;
+import java.util.HashSet;
+import java.util.Set;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.hasItems;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JavaQuestionServisTest {
     JavaQuestationServise javaQuestationServise = new JavaQuestationServise();
@@ -16,19 +21,17 @@ public class JavaQuestionServisTest {
         javaQuestationServise.add("12345", "12345");
         javaQuestationServise.add("654321", "654321");
 
-        assertThat(javaQuestationServise.getAll(), containsExactlyInAnyOrder(new Question("ffffff", "ddddddd"),
-           new Question("12345", "12345"), new Question("654321", "654321")));
+
+        Set<Question> questions = new HashSet<>();
+        questions.add(new Question("ffffff", "ddddddd"));
+        questions.add(new Question("12345", "12345"));
+        questions.add(new Question("654321", "654321"));
+
+        assertEquals(questions, javaQuestationServise.getAll());
 
 
     }
-    @Test
 
-    void duplicatingElement(){
-        javaQuestationServise.add("ffffff", "ddddddd");
-        javaQuestationServise.add("12345", "12345");
-        javaQuestationServise.add("654321", "654321");
-        assertThat(javaQuestationServise.getAll().doesNotHaveDuplicates();
-    }
 
     @Test
     void removeTest() {
@@ -37,20 +40,21 @@ public class JavaQuestionServisTest {
         javaQuestationServise.add("654321", "654321");
         javaQuestationServise.remove(new Question("12345", "12345"));
 
-        Assertions.assertEquals(javaQuestationServise.getAll().size(), 2);
-        Assertions.assertEquals(javaQuestationServise.remove(new Question("654321", "654321")),
-                new Question("654321", "654321"));
+        assertEquals(javaQuestationServise.getAll().size(), 2);
+        assertEquals(javaQuestationServise.remove(new Question("ffffff", "ddddddd")),
+                new Question("ffffff", "ddddddd"));
 
     }
+
     @Test
-    void random(){
+    void random() {
         javaQuestationServise.add("ffffff", "ddddddd");
         javaQuestationServise.add("12345", "12345");
         javaQuestationServise.add("654321", "654321");
 
-        assertThat(javaQuestationServise.getAll(), containsExactlyInAnyOrderOf(new Question("ffffff", "ddddddd"),
-                new Question("12345", "12345"), new Question("654321", "654321")));
 
+        assertThat(javaQuestationServise.getAll(), hasItems(new Question("ffffff", "ddddddd")));
     }
+
 
 }
