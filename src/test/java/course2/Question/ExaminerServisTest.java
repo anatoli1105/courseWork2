@@ -35,6 +35,7 @@ public class ExaminerServisTest {
 
 
 
+
     @Test
     void randomAmourtTest() {
         Assertions.assertThrows(IllegalArgumentException.class, () ->

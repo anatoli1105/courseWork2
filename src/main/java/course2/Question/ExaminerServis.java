@@ -6,4 +6,5 @@ public interface ExaminerServis {
     public Collection<Question> getQuestion(int amourt);
 
 
+
 }
